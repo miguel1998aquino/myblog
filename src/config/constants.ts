@@ -1,3 +1,4 @@
+export const JWT_TOKEN = 'JWT_TOKEN';
 export const DATABASE_HOST = 'DATBASE_HOST';
 export const DATABASE_PORT = 'DATABASE_PORT';
 export const DATABASE_USERNAME = 'DATABASE_USERNAME';
