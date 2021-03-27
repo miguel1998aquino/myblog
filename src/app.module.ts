@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { AccessControlModule } from 'nest-access-control';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PostModule } from './post/post.module';
@@ -13,6 +14,7 @@ import {
   DATABASE_USERNAME,
 } from './config/constants';
 import { AuhtModule } from './auht/auht.module';
+import { roles } from './app.roles';
 
 @Module({
   imports: [
@@ -38,6 +40,7 @@ import { AuhtModule } from './auht/auht.module';
     }),
     UserModule,
     AuhtModule,
+    AccessControlModule.forRoles(roles),
   ],
   controllers: [AppController],
   providers: [AppService],
